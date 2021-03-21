@@ -11,7 +11,36 @@
 	
 	<packaging>war</packaging>
 	
-	<!-- ya se mera code -->
+	
+    <distributionManagement>
+		<repository>
+			<id>deployment</id>
+			<name>maven-releases</name>
+			<url>http://localhost:8081/repository/MavenProject/</url>
+		</repository>
+	</distributionManagement>
+         
+         
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <junit.jupiter.version>5.0.0-M3</junit.jupiter.version>
+        <junit.platform.version>1.0.0-M3</junit.platform.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+		
+		<!-- ya se mera code -->
 	
 	<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -52,35 +81,6 @@
 				</executions>
 			</plugin>
 	<!-- yaha tak -->
-    <distributionManagement>
-		<repository>
-			<id>deployment</id>
-			<name>maven-releases</name>
-			<url>http://localhost:8081/repository/MavenProject/</url>
-		</repository>
-	</distributionManagement>
-         
-         
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
-        <junit.jupiter.version>5.0.0-M3</junit.jupiter.version>
-        <junit.platform.version>1.0.0-M3</junit.platform.version>
-    </properties>
-
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-            </plugin>
-		
-		
 	
 		
 		
