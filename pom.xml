@@ -8,6 +8,50 @@
     <artifactId>jenkins-example</artifactId>
     <!-- <version>1.0-SNAPSHOT</version> -->
 <version>1.0</version>
+	
+	<packaging>war</packaging>
+	
+	<!-- ya se mera code -->
+	
+	<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>2.5.2</version>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8.2</version>
+			</plugin>
+	
+			<plugin>
+			
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>3.0.0-M3</version>
+				<executions>
+					<execution>
+						<id>enforce-java</id>
+						<goals>
+							<goal>enforce</goal>
+							  <!-- <goal>enforce-versions</goal>
+                                    <goal>retarget-deploy</goal>
+                                    <goal>tag-master</goal>
+                                    <goal>promote-master</goal>	-->
+							
+						</goals>
+						<configuration>
+							<rules>
+								<requireJavaVersion>
+									<version>[1.8,)</version>
+								</requireJavaVersion>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+	<!-- yaha tak -->
     <distributionManagement>
 		<repository>
 			<id>deployment</id>
